@@ -3,7 +3,7 @@ Tornyai Dénes, Hommer Márk és Koszta Barnabás Adatbázis Alapú Rendszerek k
 
 Követelmények:
   -Adattáblák száma: Minimum 8
-  -Adatrekordok száma: MInimum 150
+  -Adatrekordok száma: Minimum 150
   -Nemtriviális lekérdezések: Minimum 9
   
   Feladatleírás:
