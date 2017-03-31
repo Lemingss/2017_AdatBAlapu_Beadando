@@ -1,5 +1,5 @@
 User (ID, név, jelszó, típus)
-Könyv (ISBN, cím, ár)
+Termék (ISBN, cím, típus, ár)
 Szerző (ISBN, szerző)
 Műfaj (ISBN, műfaj)
 Bolt (ID, név)
