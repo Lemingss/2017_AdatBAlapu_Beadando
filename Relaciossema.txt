@@ -1,8 +1,0 @@
-User (ID, név, jelszó, típus)
-Termék (ISBN, cím, típus, ár)
-Szerző (ISBN, szerző)
-Műfaj (ISBN, műfaj)
-Bolt (ID, név)
-Lakcím (ID, irszám, város, utca, házszám)
-Raktár (ID, ISBN, db)
-Számla (s_ID, ID, ISBN, ár, dátum)
