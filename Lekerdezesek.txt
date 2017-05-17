@@ -1,0 +1,27 @@
+Keresés címre, találatok számának kigyűjtése
+	SELECT Termék.ID, COUNT(Termék.ID), Termék.Cím, Műfaj.Műfaj FROM Termék, Műfaj
+		WHERE Termék.ID = Műfaj.Termék_ID AND Termék.Cím = @keres
+
+Keresés szerzőre, találatok számának kigyűjtése
+	SELECT Termék.ID FROM Termék, Könyv_Szerző
+	WHERE Termék.ID = Könyv_Szerző.Könyv_Termék_ID AND Könyv_Szerző.Szerző = @keres
+
+Legújabb könyvek (3)
+	SELECT Termék.ID, Termék.Cím, Könyv_Szerző.Szerző FROM Termék, Könyv_Szerző
+		WHERE Termék.ID = Könyv_Szerző.Könyv_Termék_ID AND ROWNUM >= (COUNT(Termék.ID) -3)
+
+Áruházak Könyvei
+	SELECT Bolt.Bolt_ID, Bolt.Név, Termék.ID FROM Bolt, Termék
+		ORDER BY Bolt.Bolt_ID
+
+"Olcsó könyvek" kilistázása
+	SELECT Termék.ID, Termék.Név, Könyv_Szerző.Szerző FROM Termék, Könyv_Szerző
+		WHERE Könyv_Szerző.Könyv_Termék_ID = Termék.ID AND Termék.Ár <= 2000
+
+Heti/havi legtöbbet vásárolt könyv
+	SELECT Vásárlás.Termék_ID, Vásárlás.Dátum, Termék.Cím FROM Vásárlás, Termék
+		WHERE Vásárlás.Dátum BETWEEN SYSDATE AND (ADD_MONTHS (SYSDATE, -1))
+
+Összes termék kilistázása
+	SELECT Termék.ID, Termék.Cím, Termék.Ár, Műfaj.Műfaj FROM Termék, Műfaj
+		WHERE Termék.ID = Műfaj.Termék_ID
