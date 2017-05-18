@@ -3,7 +3,7 @@ Keresés címre, találatok számának kigyűjtése
 		WHERE Termék.ID = Műfaj.Termék_ID AND Termék.Cím = @keres
 
 Keresés szerzőre, találatok számának kigyűjtése
-	SELECT Termék.ID FROM Termék, Könyv_Szerző
+	SELECT Termék.ID, COUNT(Termék.ID), Termék.Cím, Műfaj.Műfaj FROM Termék, Műfaj
 	WHERE Termék.ID = Könyv_Szerző.Könyv_Termék_ID AND Könyv_Szerző.Szerző = @keres
 
 Legújabb könyvek (3)
@@ -25,3 +25,4 @@ Heti/havi legtöbbet vásárolt könyv
 Összes termék kilistázása
 	SELECT Termék.ID, Termék.Cím, Termék.Ár, Műfaj.Műfaj FROM Termék, Műfaj
 		WHERE Termék.ID = Műfaj.Termék_ID
+
